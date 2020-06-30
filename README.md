@@ -70,6 +70,62 @@ return [
 ];
 ```
 
-[**More...**](docs/guide/configuration.md)
+Quick Configuration
+------------
+*Simplified version from [basic configuration](docs/guide/configuration.md)*  
+Once the extension is installed, simply modify your application configuration as follows:
 
-[screenshots](https://goo.gl/r8RizT)
+```php
+return [
+    'modules' => [
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout' => 'left-menu',
+            // 'mainLayout' => '@app/views/layouts/main.php',
+            // uncomment mainLayout if you want to have it wrapped in your application's main 
+            // layout that has your application's nav bar and your brand logo on it
+            ...
+        ]
+        ...
+    ],
+    ...
+    'components' => [
+        ...
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\DbManager'
+        ]
+    ],
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'site/*',
+            'admin/*',
+            'some-controller/some-action',
+            // The actions listed here will be allowed to everyone including guests.
+            // So, 'admin/*' should not appear here in the production, of course.
+            // But in the earlier stages of your development, you may probably want to
+            // add a lot of actions here until you finally completed setting up rbac,
+            // otherwise you may not even take a first step.
+        ]
+    ],
+];
+```
+
+To use the menu manager (optional), execute the migration here:
+```
+yii migrate --migrationPath=@mdm/admin/migrations
+```
+
+If you use database (class 'yii\rbac\DbManager') to save rbac data, execute the migration here:
+```
+yii migrate --migrationPath=@yii/rbac/migrations
+```
+
+Screenshot
+------------
+![Assignments-1](https://mdmunir.files.wordpress.com/2016/03/image01.png)
+![Routes](https://mdmunir.files.wordpress.com/2016/03/image03.png)
+![Roles](https://mdmunir.files.wordpress.com/2016/03/image04.png)
+![Roles-2](https://mdmunir.files.wordpress.com/2016/03/image06.png)
+![Permission](https://mdmunir.files.wordpress.com/2016/03/image07.png)
+![Menu](https://mdmunir.files.wordpress.com/2016/03/image09.png)
