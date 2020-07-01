@@ -123,9 +123,15 @@ yii migrate --migrationPath=@yii/rbac/migrations
 
 Screenshot
 ------------
-![Assignments-1](https://mdmunir.files.wordpress.com/2016/03/image01.png)
-![Routes](https://mdmunir.files.wordpress.com/2016/03/image03.png)
-![Roles](https://mdmunir.files.wordpress.com/2016/03/image04.png)
-![Roles-2](https://mdmunir.files.wordpress.com/2016/03/image06.png)
-![Permission](https://mdmunir.files.wordpress.com/2016/03/image07.png)
-![Menu](https://mdmunir.files.wordpress.com/2016/03/image09.png)
+![Assignments-1](https://mdmunir.files.wordpress.com/2016/03/image01.png)  
+  
+![Routes](https://mdmunir.files.wordpress.com/2016/03/image03.png)  
+  
+![Roles](https://mdmunir.files.wordpress.com/2016/03/image04.png)  
+  
+![Roles-2](https://mdmunir.files.wordpress.com/2016/03/image06.png)  
+  
+![Permission](https://mdmunir.files.wordpress.com/2016/03/image07.png)  
+  
+![Menu](https://mdmunir.files.wordpress.com/2016/03/image09.png)  
+  
